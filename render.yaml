@@ -9,6 +9,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
       # 以下敏感变量请在 Render Dashboard 中手动配置：
       # GEMINI_API_KEY
       # FIREBASE_PROJECT_ID
