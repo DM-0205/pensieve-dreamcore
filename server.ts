@@ -13,6 +13,12 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Allow Firebase Auth popup to communicate with the main window
+  app.use((req, res, next) => {
+    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
+    next();
+  });
+
   // =========================================================================
   // AI Provider Configuration
   // 默认使用 Gemini，如果你想切换为其他大模型，可以注释掉 Gemini 部分并取消下方对应代码的注释。
