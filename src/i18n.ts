@@ -1,0 +1,112 @@
+import i18next from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+const savedLang = localStorage.getItem('pensieve-lang') || 'zh';
+
+const resources = {
+  zh: {
+    translation: {
+      title: 'The Pensieve',
+      subtitle: 'Capture a thought, watch it become a memory',
+      add: '记录',
+      enterMemory: '进入记忆',
+      view: '查看',
+      clear: '清除',
+      pressEnter: '按 Enter 进入此记忆',
+      personal: '条灵感',
+      login: '登录',
+      logout: '退出',
+      loginPrompt: '请先登录，才能将思绪存入冥想盆',
+      speakYourThought: '说出你的灵感',
+      listening: '正在聆听... 点击停止',
+      clickToSpeak: '点击麦克风开始录音',
+      organizing: 'AI 正在整理你的思绪...',
+      return: '返回',
+      replay: '重播',
+      yourThought: '你的灵感',
+      original: '原始录音',
+      memoryArchive: '灵感档案',
+      memoriesCount: '条个人灵感',
+      titleLabel: '标题',
+      contentLabel: '内容',
+      toneLabel: '色调',
+      warm: '温暖',
+      cool: '清冷',
+      bgImage: '背景图片',
+      uploadImage: '上传图片',
+      useDefault: '使用默认',
+      cancel: '取消',
+      save: '保存',
+      trashBin: '回收箱',
+      trashEmpty: '回收箱是空的',
+      editMemory: '编辑灵感',
+      memoryTitle: '灵感标题',
+      memoryTone: '灵感色调',
+      warmJoy: '温暖 / 喜悦',
+      coolCalm: '清冷 / 宁静',
+      changeImage: '更换图片',
+      saveChanges: '保存修改',
+      dailyLimitExceeded: '今日额度已用完，已切换基础整理',
+      designPurpose: '设计初衷',
+      designPurposeLabel: '设计初衷',
+    }
+  },
+  en: {
+    translation: {
+      title: 'The Pensieve',
+      subtitle: 'Capture a thought, watch it become a memory',
+      add: 'Add',
+      enterMemory: 'Enter Memory',
+      view: 'View',
+      clear: 'Clear',
+      pressEnter: 'Press Enter to dive into this memory',
+      personal: 'personal',
+      login: 'Login',
+      logout: 'Logout',
+      loginPrompt: 'Please log in to save your thoughts',
+      speakYourThought: 'Speak Your Thought',
+      listening: 'Listening... Click to stop',
+      clickToSpeak: 'Click the mic to start speaking',
+      organizing: 'Organizing your thoughts with AI...',
+      return: 'Return',
+      replay: 'Replay',
+      yourThought: 'Your Thought',
+      original: 'Original',
+      memoryArchive: 'Memory Archive',
+      memoriesCount: 'personal memories',
+      titleLabel: 'Title',
+      contentLabel: 'Content',
+      toneLabel: 'Tone',
+      warm: 'Warm',
+      cool: 'Cool',
+      bgImage: 'Background Image',
+      uploadImage: 'Upload Image',
+      useDefault: 'Use Default',
+      cancel: 'Cancel',
+      save: 'Save',
+      trashBin: 'Trash Bin',
+      trashEmpty: 'Trash is empty',
+      editMemory: 'Edit Memory',
+      memoryTitle: 'Memory Title',
+      memoryTone: 'Memory Tone',
+      warmJoy: 'Warm / Joy',
+      coolCalm: 'Cool / Calm',
+      changeImage: 'Change Image',
+      saveChanges: 'Save Changes',
+      dailyLimitExceeded: "Daily limit reached. Using basic mode.",
+      designPurpose: 'Design Purpose',
+      designPurposeLabel: 'Design Purpose',
+    }
+  }
+};
+
+void i18next
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: savedLang,
+    fallbackLng: 'zh',
+    interpolation: { escapeValue: false },
+  });
+
+export default i18next;

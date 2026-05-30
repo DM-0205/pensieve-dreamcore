@@ -1,0 +1,10 @@
+{
+  "name": "Pensieve - Dreamcore",
+  "description": "A surreal Pensieve experience that records voice.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
